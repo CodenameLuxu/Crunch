@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/F02_inputs_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/F02_input_dish"
+        android:layout_width="238dp"
+        android:layout_height="65dp"
+        android:layout_below="@+id/F02_label_Time"
+        android:layout_alignStart="@+id/F02_label_Time"
+        android:layout_alignEnd="@+id/F02_label_Time"
+        android:layout_marginStart="-66dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="-89dp" />
+
+    <TextView
+        android:id="@+id/F02_Label_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="189dp"
+        android:text="@string/L_Date"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/F02_input_Date"
+        android:layout_width="146dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/F02_Label_Date"
+        android:layout_alignStart="@+id/F02_Label_Date"
+        android:layout_alignEnd="@+id/F02_Label_Date"
+        android:layout_marginStart="-76dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="-7dp"
+        android:text="@string/L_Date"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/F02_label_Time"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/F02_input_Date"
+        android:layout_alignStart="@+id/F02_Label_Date"
+        android:layout_alignEnd="@+id/F02_Label_Date"
+        android:layout_marginStart="-12dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="-9dp"
+        android:text="@string/L_Time"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/F02_Label_Dish"
+        android:layout_width="120dp"
+        android:layout_height="51dp"
+        android:layout_below="@+id/F02_input_dish"
+        android:layout_alignStart="@+id/F02_input_dish"
+        android:layout_alignEnd="@+id/F02_input_dish"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="57dp"
+        android:text="@string/L_Dish"
+        android:textSize="30sp" />
+
+    <Spinner
+        android:id="@+id/F02_Input_time"
+        android:layout_width="244dp"
+        android:layout_height="81dp"
+        android:layout_below="@+id/F02_Label_Dish"
+        android:layout_alignStart="@+id/F02_input_dish"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/F02_Btn_Calendar"
+        android:layout_width="85dp"
+        android:layout_height="38dp"
+        android:layout_alignTop="@+id/F02_input_Date"
+        android:layout_alignEnd="@+id/F02_Input_time"
+        android:layout_alignBottom="@+id/F02_input_Date"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="-44dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_toEndOf="@+id/F02_input_Date"
+        android:text="@string/L_Picker" />
+
+</RelativeLayout>

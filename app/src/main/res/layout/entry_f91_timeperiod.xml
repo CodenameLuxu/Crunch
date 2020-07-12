@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Entry_F91_L_code"
+        android:layout_width="58dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/L_Code"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Entry_F91_L_Desc"
+        android:layout_width="107dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/L_Description"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/Entry_F91_L_code"
+        app:layout_constraintTop_toBottomOf="@+id/Entry_F91_L_code" />
+
+    <TextView
+        android:id="@+id/Entry_F91_V_code"
+        android:layout_width="131dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/Entry_F91_Btn_Update"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toEndOf="@+id/Entry_F91_L_code"
+        app:layout_constraintTop_toTopOf="@+id/Entry_F91_L_code" />
+
+    <TextView
+        android:id="@+id/Entry_F91_V_desc"
+        android:layout_width="130dp"
+        android:layout_height="26dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Entry_F91_L_Desc"
+        app:layout_constraintStart_toStartOf="@+id/Entry_F91_V_code"
+        app:layout_constraintTop_toTopOf="@+id/Entry_F91_L_Desc"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/Entry_F91_Btn_Update"
+        android:layout_width="76dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/L_Update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Entry_F91_V_code" />
+
+    <Button
+        android:id="@+id/Entry_F91_Btn_Delete"
+        android:layout_width="76dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/l_Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Entry_F91_Btn_Update"
+        app:layout_constraintTop_toBottomOf="@+id/Entry_F91_Btn_Update" />
+</androidx.constraintlayout.widget.ConstraintLayout>

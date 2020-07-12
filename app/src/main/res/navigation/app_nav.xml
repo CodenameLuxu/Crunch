@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/f01_Fragment">
+
+    <fragment
+        android:id="@+id/f01_Fragment"
+        android:name="com.example.basiclogin.Application.F01_Fragment"
+        android:label="F01_Fragment" >
+        <action
+            android:id="@+id/action_f01_Fragment_to_f90_Fragment"
+            app:destination="@id/f90_Fragment" />
+        <action
+            android:id="@+id/action_f01_Fragment_to_f02_Fragment"
+            app:destination="@id/f02_Fragment" />
+        <action
+            android:id="@+id/action_f01_Fragment_to_f03_Fragment"
+            app:destination="@id/f03_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/f02_Fragment"
+        android:name="com.example.basiclogin.Application.F02_Fragment"
+        android:label="F02_Fragment" >
+        <action
+            android:id="@+id/action_f02_Fragment_to_f01_Fragment"
+            app:destination="@id/f01_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/f03_Fragment"
+        android:name="com.example.basiclogin.Application.F03_Fragment"
+        android:label="F03_Fragment" >
+        <action
+            android:id="@+id/action_f03_Fragment_to_f01_Fragment"
+            app:destination="@id/f01_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/f90_Fragment"
+        android:name="com.example.basiclogin.Application.F90_Fragment"
+        android:label="F90_Fragment" >
+        <action
+            android:id="@+id/action_f90_Fragment_to_f91_Fragment"
+            app:destination="@id/f91_Fragment" />
+        <action
+            android:id="@+id/action_f90_Fragment_to_f01_Fragment"
+            app:destination="@id/f01_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/f91_Fragment"
+        android:name="com.example.basiclogin.Application.F91_Fragment"
+        android:label="F91_Fragment" >
+        <action
+            android:id="@+id/action_f91_Fragment_to_f90_Fragment"
+            app:destination="@id/f90_Fragment" />
+    </fragment>
+</navigation>

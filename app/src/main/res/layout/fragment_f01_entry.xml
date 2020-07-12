@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Application.MainActivity">
+
+    <TextView
+        android:id="@+id/F01_MainTitle"
+        android:layout_width="244dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/F01_Title"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/F01_BTN_Log"
+        android:layout_width="155dp"
+        android:layout_height="182dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/BTN_Log"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/F01_MainTitle" />
+
+    <Button
+        android:id="@+id/F01_BTN_Picker"
+        android:layout_width="155dp"
+        android:layout_height="182dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/BTN_Picker"
+        app:layout_constraintStart_toEndOf="@+id/F01_BTN_Log"
+        app:layout_constraintTop_toBottomOf="@+id/F01_MainTitle" />
+
+    <Button
+        android:id="@+id/F01_Btn_Option"
+        android:layout_width="217dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/L_Option"
+        app:layout_constraintEnd_toEndOf="@+id/F01_BTN_Picker"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/F01_BTN_Log"
+        app:layout_constraintTop_toBottomOf="@+id/F01_BTN_Log" />
+</androidx.constraintlayout.widget.ConstraintLayout>

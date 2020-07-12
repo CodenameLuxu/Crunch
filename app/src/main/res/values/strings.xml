@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">BasicLogin</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="L_Username">"Username"</string>
+    <string name="L_Password">"Password"</string>
+    <string name="L_Register">"Register"</string>
+    <string name="L_Signin">"Sign in"</string>
+    <string name="L_Submit">"Submit"</string>
+    <string name="L_Back">"Back"</string>
+
+    <string name="F01_Title">Crunch Food Picker</string>
+    <string name="BTN_Log">Food Log</string>
+    <string name="BTN_Picker">Food Picker</string>
+    <string name="F02_TItle">Food Logger</string>
+    <string name="L_Clear">Clear</string>
+    <string name="L_Date">Date</string>
+    <string name="L_Time">Time</string>
+    <string name="L_Dish">Dish</string>
+    <string name="L_Picker">picker</string>
+    <string name="L_Pick">Pick</string>
+    <string name="L_Description">Description</string>
+    <string name="L_Food_placeholder">Sample food</string>
+    <string name="L_Option">Option</string>
+    <string name="L_TimePeriod">Time period</string>
+    <string name="L_Code">Code</string>
+    <string name="L_Add">Add</string>
+    <string name="L_Update">Update</string>
+    <string name="l_Delete">Delete</string>
+    <string name="MSG_Delete">Confirm to delete?</string>
+
+
+</resources>

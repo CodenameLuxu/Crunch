@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/F91_listview"
+            android:layout_width="314dp"
+            android:layout_height="278dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/F91_Btn_Add" />
+
+        <TextView
+            android:id="@+id/F91_L_TMEPRD_Cd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="@string/L_Code"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.214"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/F91_L_TMEPRD_Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/L_Description"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/F91_In_TMEPRD_Cd"
+            app:layout_constraintTop_toBottomOf="@+id/F91_In_TMEPRD_Cd" />
+
+        <EditText
+            android:id="@+id/F91_In_TMEPRD_Cd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="@string/L_Code"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/F91_L_TMEPRD_Cd"
+            app:layout_constraintTop_toBottomOf="@+id/F91_L_TMEPRD_Cd"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/F91_In_TMEPRD_Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="@string/L_Description"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="@+id/F91_L_TMEPRD_Desc"
+            app:layout_constraintTop_toBottomOf="@+id/F91_L_TMEPRD_Desc"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/F91_Btn_Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/L_Add"
+            app:layout_constraintEnd_toEndOf="@+id/F91_In_TMEPRD_Desc"
+            app:layout_constraintHorizontal_bias="0.459"
+            app:layout_constraintStart_toStartOf="@+id/F91_In_TMEPRD_Desc"
+            app:layout_constraintTop_toBottomOf="@+id/F91_In_TMEPRD_Desc" />
+
+        <Button
+            android:id="@+id/F91_Btn_Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/L_Back"
+            app:layout_constraintEnd_toEndOf="@+id/F91_listview"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/F91_listview"
+            app:layout_constraintTop_toBottomOf="@+id/F91_listview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
