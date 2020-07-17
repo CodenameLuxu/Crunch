@@ -37,6 +37,13 @@ class F90_Fragment : Fragment() {
             findNavController().navigate(R.id.action_f90_Fragment_to_f01_Fragment)
         }
 
+        contentview.findViewById<Button>(R.id.F90_Btn_Crusine).setOnClickListener {
+            findNavController().navigate(R.id.action_f90_Fragment_to_f92_Fragment)
+        }
+        contentview.findViewById<Button>(R.id.F90_Btn_DishItem).setOnClickListener {
+            findNavController().navigate(R.id.action_f90_Fragment_to_f93_Fragment)
+        }
+
     }
 
 }

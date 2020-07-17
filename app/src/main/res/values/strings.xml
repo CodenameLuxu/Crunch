@@ -15,6 +15,8 @@
     <string name="L_Signin">"Sign in"</string>
     <string name="L_Submit">"Submit"</string>
     <string name="L_Back">"Back"</string>
+    <string name="L_Refresh">"Refresh"</string>
+    <string name="L_Crusine">"Crusine"</string>
 
     <string name="F01_Title">Crunch Food Picker</string>
     <string name="BTN_Log">Food Log</string>
@@ -24,6 +26,10 @@
     <string name="L_Date">Date</string>
     <string name="L_Time">Time</string>
     <string name="L_Dish">Dish</string>
+    <string name="L_Name">Name</string>
+    <string name="L_DishItem">Dish Item</string>
+    <string name="L_DishName">Dish Name</string>
+    <string name="L_CruCat">Cuisine Category</string>
     <string name="L_Picker">picker</string>
     <string name="L_Pick">Pick</string>
     <string name="L_Description">Description</string>
@@ -33,6 +39,10 @@
     <string name="L_Code">Code</string>
     <string name="L_Add">Add</string>
     <string name="L_Update">Update</string>
+    <string name="L_VeganOpt">Vegan</string>
+    <string name="L_NutFreOpt">Nut free</string>
+    <string name="L_MilkFreOpt">Milk free</string>
+    <string name="L_SpicyOpt">Spicy</string>
     <string name="l_Delete">Delete</string>
     <string name="MSG_Delete">Confirm to delete?</string>
 

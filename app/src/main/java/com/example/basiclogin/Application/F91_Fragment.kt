@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -14,7 +14,9 @@ import com.example.basiclogin.Models.TimePeriodRecord
 import com.example.basiclogin.Models.TimePeriodRecordAdapter
 import com.example.basiclogin.R
 import com.example.basiclogin.Tables.TMEPRD
-import kotlinx.android.synthetic.main.fragment_f91__config_tmprd.*
+import com.example.basiclogin.Tables.TableConstants
+import kotlinx.android.synthetic.main.fragment_f91__tbl_codedesc.*
+
 
 
 class F91_Fragment : Fragment() {
@@ -25,12 +27,16 @@ class F91_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_f91__config_tmprd, container, false)
+        val view = inflater.inflate(R.layout.fragment_f91__tbl_codedesc, container, false)
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        refreshResultView()
+
+        view.findViewById<TextView>(R.id.F91_TBL_Title).setText(TableConstants.TBL_TMEPRD)
 
         view.findViewById<Button>(R.id.F91_Btn_Add).setOnClickListener {
             try {
@@ -48,11 +54,17 @@ class F91_Fragment : Fragment() {
                 }
                 Log.i(TAG, "Adding operation finished.")
                 Toast.makeText(context,"Record added",Toast.LENGTH_LONG).show()
+                resetField()
                 refreshResultView()
             }catch(e: Exception){
                 Toast.makeText(context,"Something gone wrong",Toast.LENGTH_LONG).show()
                 Log.i(TAG,"Exception found : ${e.message}")
             }
+
+        }
+
+        view.findViewById<Button>(R.id.F91_Btn_Refresh).setOnClickListener {
+            refreshResultView()
         }
 
         view.findViewById<Button>(R.id.F91_Btn_Back).setOnClickListener {
@@ -60,16 +72,17 @@ class F91_Fragment : Fragment() {
         }
 
 //        Inflate list view
-        refreshResultView()
 
     }
 
     fun refreshResultView(){
         val records :List<TimePeriodRecord> = TMEPRD(activity!!.applicationContext).fetchAllRecord()
-        F91_listview.adapter =null;
-        for (entry in records){
-            F91_listview.addView(TimePeriodRecordAdapter(activity!!.applicationContext).getView(entry))
-        }
+
+        val adapter = TimePeriodRecordAdapter(context!!,R.layout.entry_f91_timeperiod,records)
+        F91_listview.adapter  =  adapter
+
+        Log.i(TAG, "F91 : Count in record : ${records.size}")
+        Log.i(TAG, "F91 : Count in view : ${F91_listview.count}")
     }
 
     fun resetField(){

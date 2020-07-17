@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <Spinner
-        android:id="@+id/F02_input_dish"
+        android:id="@+id/F02_input_time"
         android:layout_width="238dp"
         android:layout_height="65dp"
         android:layout_below="@+id/F02_label_Time"
@@ -58,9 +58,9 @@
         android:id="@+id/F02_Label_Dish"
         android:layout_width="120dp"
         android:layout_height="51dp"
-        android:layout_below="@+id/F02_input_dish"
-        android:layout_alignStart="@+id/F02_input_dish"
-        android:layout_alignEnd="@+id/F02_input_dish"
+        android:layout_below="@+id/F02_input_time"
+        android:layout_alignStart="@+id/F02_input_time"
+        android:layout_alignEnd="@+id/F02_input_time"
         android:layout_marginStart="61dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="57dp"
@@ -68,11 +68,11 @@
         android:textSize="30sp" />
 
     <Spinner
-        android:id="@+id/F02_Input_time"
+        android:id="@+id/F02_Input_dish"
         android:layout_width="244dp"
         android:layout_height="81dp"
         android:layout_below="@+id/F02_Label_Dish"
-        android:layout_alignStart="@+id/F02_input_dish"
+        android:layout_alignStart="@+id/F02_input_time"
         android:layout_marginStart="1dp"
         android:layout_marginTop="22dp" />
 
@@ -81,7 +81,7 @@
         android:layout_width="85dp"
         android:layout_height="38dp"
         android:layout_alignTop="@+id/F02_input_Date"
-        android:layout_alignEnd="@+id/F02_Input_time"
+        android:layout_alignEnd="@+id/F02_Input_dish"
         android:layout_alignBottom="@+id/F02_input_Date"
         android:layout_marginStart="27dp"
         android:layout_marginTop="-3dp"

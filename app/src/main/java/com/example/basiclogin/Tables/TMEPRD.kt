@@ -5,7 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.basiclogin.Models.TimePeriodRecord
 
-class TMEPRD(val context:Context) {
+class TMEPRD(val context:Context) : GenericTableInterface<TimePeriodRecord>{
     private lateinit var database : TMEPRDHandler
     private val TAG  ="TMEPRD Table"
 
@@ -13,7 +13,7 @@ class TMEPRD(val context:Context) {
         database = TMEPRDHandler(context)
     }
 
-    public fun isCodeExist(code:String):Boolean {
+    override fun isCodeExist(code:String):Boolean {
         var result : MutableList<TimePeriodRecord> = ArrayList()
         val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_TMEPRD}" +
                 " WHERE ${TableConstants.TMEPRD_CODE}  = \'$code\' "
@@ -37,7 +37,7 @@ class TMEPRD(val context:Context) {
         return result.size > 0
     }
 
-    public fun generateRecordID():Int{
+    override fun generateRecordID():Int{
         try {
             val QUERY_SCRIPT = "SELECT MAX(${TableConstants.TMEPRD_ID}) + 1 FROM ${TableConstants.TBL_TMEPRD} ;"
             val dbread = database.readableDatabase
@@ -59,8 +59,11 @@ class TMEPRD(val context:Context) {
         }
     }
 
-    public fun addRecord(entry:TimePeriodRecord):Boolean{
+    override fun addRecord(entry:TimePeriodRecord):Boolean{
         try{
+            if (isCodeExist(entry.code)){
+                throw Exception("code already exust")
+            }
             val recordid = generateRecordID()
             if (recordid == -1){
                 throw Exception(" Fail to generate user id ")
@@ -89,7 +92,7 @@ class TMEPRD(val context:Context) {
 
 
 
-    public fun updateRecord(entry:TimePeriodRecord):Boolean{
+    override fun updateRecord(entry:TimePeriodRecord):Boolean{
         try{
             val writedb = database.writableDatabase
             var cv = ContentValues()
@@ -97,7 +100,7 @@ class TMEPRD(val context:Context) {
             cv.put(TableConstants.TMEPRD_CODE, entry.code )
             cv.put(TableConstants.TMEPRD_DESC, entry.desc )
             val result = writedb.update(TableConstants.TBL_TMEPRD,cv,"${TableConstants.TMEPRD_ID} = ${entry.id}",null)
-            if(result >0){
+            if(result <= 0){
                 Toast.makeText(context,"Failure to update time period record", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(context,"time period record updated", Toast.LENGTH_LONG).show()
@@ -110,11 +113,27 @@ class TMEPRD(val context:Context) {
         }
     }
 
-    fun deleteRecord(entry: TimePeriodRecord): Boolean {
-        return database.writableDatabase.delete(TableConstants.TBL_TMEPRD, TableConstants.TMEPRD_CODE + "=" + entry.id, null) > 0
+    override fun deleteRecord(entry: TimePeriodRecord): Boolean {
+        try {
+            val result =  database.writableDatabase.delete(
+                TableConstants.TBL_TMEPRD,
+                TableConstants.TMEPRD_ID + "=" + entry.id,
+                null
+            )
+            if ( result < 1 ){
+                throw(Exception("Delete : No row is affected"))
+            }else{
+                Log.i(TAG,"${result} rows deleted")
+            }
+
+            return true
+        }catch(e :Exception){
+            Log.i(TAG,"Exception found: ${e.message}")
+            return false
+        }
     }
 
-    public fun outputRecords(list : List<TimePeriodRecord>){
+    override fun outputRecords(list : List<TimePeriodRecord>){
         for (entry in list){
             Log.i(TAG,"Out --> ${entry.id},${entry.code},${entry.desc}")
         }
@@ -122,7 +141,7 @@ class TMEPRD(val context:Context) {
 
 //    General query
 
-    public fun fetchAllRecord():List<TimePeriodRecord> {
+    override fun fetchAllRecord():List<TimePeriodRecord> {
         var result : MutableList<TimePeriodRecord> = ArrayList()
         val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_TMEPRD}"
 
@@ -141,7 +160,8 @@ class TMEPRD(val context:Context) {
         }
         queryoutput.close()
         dbread.close()
-        outputRecords(result)
+//        outputRecords(result)
+        Log.i(TAG, "FetchAllRecord --> returned ${result.size}")
         return result
     }
 

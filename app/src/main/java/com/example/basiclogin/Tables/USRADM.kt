@@ -19,7 +19,7 @@ class USRADM(val context:Context) {
         var userlist : MutableList<UserCredential> = ArrayList()
         val QUERY_SCRIPT  = "SELECT * FROM ${Statics.TBL_USRADM}" +
         " WHERE ${Statics.USRADM_USRUSRNM}  = \'$username\' "
-//        Log.i(TAG, "isUserExist() --> ${QUERY_SCRIPT}")
+
         val dbread = database.readableDatabase
         val result  = dbread.rawQuery(QUERY_SCRIPT,null)
         if (result.moveToFirst()){
@@ -109,7 +109,7 @@ class USRADM(val context:Context) {
             return returnid
         }catch(e: Exception){
             Log.i(TAG, "generateUserID() -- > Exception found : ${e.message}")
-            return -1
+            return 0
         }
     }
 

@@ -6,25 +6,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <Button
         android:id="@+id/F90_Btn_TimePeriod"
         android:layout_width="188dp"
         android:layout_height="70dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="68dp"
         android:text="@string/L_TimePeriod"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/F90_Btn_Back"
-        android:layout_width="176dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/L_Back"
+        android:id="@+id/F90_Btn_Crusine"
+        android:layout_width="188dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/L_Crusine"
         app:layout_constraintEnd_toEndOf="@+id/F90_Btn_TimePeriod"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/F90_Btn_TimePeriod"
         app:layout_constraintTop_toBottomOf="@+id/F90_Btn_TimePeriod" />
+
+    <Button
+        android:id="@+id/F90_Btn_DishItem"
+        android:layout_width="188dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/L_DishItem"
+        app:layout_constraintEnd_toEndOf="@+id/F90_Btn_Crusine"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/F90_Btn_Crusine"
+        app:layout_constraintTop_toBottomOf="@+id/F90_Btn_Crusine" />
+
+    <Button
+        android:id="@+id/F90_Btn_Back"
+        android:layout_width="188dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/L_Back"
+        app:layout_constraintEnd_toEndOf="@+id/F90_Btn_DishItem"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/F90_Btn_DishItem"
+        app:layout_constraintTop_toBottomOf="@+id/F90_Btn_DishItem" />
 </androidx.constraintlayout.widget.ConstraintLayout>

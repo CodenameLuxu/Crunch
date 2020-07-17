@@ -12,10 +12,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.basiclogin.R
-import com.example.basiclogin.Tables.TMEPRD
+import com.example.basiclogin.Tables.CRUCAT
 
-class TimePeriodRecordAdapter(context:Context, var resource:Int, var items:List<TimePeriodRecord>)
-    :ArrayAdapter<TimePeriodRecord>( context , resource , items ){
+class CuisineCategoryRecordAdapter (context: Context, var resource:Int, var items:List<CuisineCategoryRecord>)
+    : ArrayAdapter<CuisineCategoryRecord>( context , resource , items ){
 
     val TAG = "Code Desc adapter"
 
@@ -29,7 +29,7 @@ class TimePeriodRecordAdapter(context:Context, var resource:Int, var items:List<
         val entry_Btn_Update = view.findViewById<Button>(R.id.Entry_F91_Btn_Update)
         val entry_Btn_Delete = view.findViewById<Button>(R.id.Entry_F91_Btn_Delete)
 
-        var record : TimePeriodRecord = items[position]
+        var record : CuisineCategoryRecord = items[position]
 
         entry_code.text = record.code
         entry_Desc.text = record.desc
@@ -45,7 +45,7 @@ class TimePeriodRecordAdapter(context:Context, var resource:Int, var items:List<
         return view
     }
 
-    fun showUpdateDialog(updateEntry : TimePeriodRecord){
+    fun showUpdateDialog(updateEntry : CuisineCategoryRecord){
         try {
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Update Record")
@@ -69,7 +69,7 @@ class TimePeriodRecordAdapter(context:Context, var resource:Int, var items:List<
                         newDesc.error = "Description must not be empty"
                         newDesc.requestFocus()
                     } else {
-                        TMEPRD(context).updateRecord(updateEntry)
+                        CRUCAT(context).updateRecord(updateEntry)
                     }
                 }
             })
@@ -86,7 +86,7 @@ class TimePeriodRecordAdapter(context:Context, var resource:Int, var items:List<
         }
     }
 
-    fun showDeleteDialog(deleteRecord :  TimePeriodRecord){
+    fun showDeleteDialog(deleteRecord :  CuisineCategoryRecord){
         try {
             val builder = AlertDialog.Builder(context)
             builder.setTitle("Delete record")
@@ -97,7 +97,7 @@ class TimePeriodRecordAdapter(context:Context, var resource:Int, var items:List<
 
             builder.setPositiveButton("Delete", object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface?, which: Int) {
-                    TMEPRD(context).deleteRecord(deleteRecord)
+                    CRUCAT(context).deleteRecord(deleteRecord)
                 }
             })
             builder.setNegativeButton("Cancel", object : DialogInterface.OnClickListener {
@@ -113,4 +113,5 @@ class TimePeriodRecordAdapter(context:Context, var resource:Int, var items:List<
 
         }
     }
+
 }

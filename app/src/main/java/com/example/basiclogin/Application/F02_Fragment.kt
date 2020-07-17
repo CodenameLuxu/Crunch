@@ -3,17 +3,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ScrollView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import 	android.util.Log
 import android.app.DatePickerDialog
-import android.widget.TextView
+import android.widget.*
+import com.example.basiclogin.Models.TimePeriodRecorSpinnerdAdapter
 import java.util.Calendar
-import 	java.text.SimpleDateFormat
 import com.example.basiclogin.R
+import com.example.basiclogin.Tables.TMEPRD
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -46,6 +44,7 @@ class F02_Fragment : Fragment() {
 //       Prep input fields functionality
         var inputview =  layoutInflater.inflate(R.layout.fragment_f02_inputfields,null)
         initInputFunctions(inputview)
+        initButtonFunctions(view)
 
         inputfield.addView(inputview)
     }
@@ -69,7 +68,45 @@ class F02_Fragment : Fragment() {
                 cal.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
+
+         val timeperiodspinner = view.findViewById<Spinner>(R.id.F02_input_time)
+         val timeprdrecords = TMEPRD(context!!).fetchAllRecord()
+         val timespinneradapter = TimePeriodRecorSpinnerdAdapter(context!!,R.layout.entry_spinner_string,timeprdrecords)
+         timeperiodspinner.adapter = timespinneradapter
+
+
+
+         view.findViewById<Button>(R.id.F02_BTN_Home)
         Log.d(TAG,"Functionality Initialized")
+
+    }
+
+    private fun initButtonFunctions(view : View) {
+        val btn_home = view.findViewById<Button>(R.id.F02_BTN_Home)
+        val btn_clear = view.findViewById<Button>(R.id.F02_BTN_Clear)
+        val btn_submit = view.findViewById<Button>(R.id.F02_BTN_Submit)
+
+        btn_clear.setOnClickListener {
+            clearinput(view.findViewById(R.id.F02_ScrollPane))
+        }
+
+        btn_home.setOnClickListener {
+            findNavController().navigate(R.id.action_f02_Fragment_to_f01_Fragment)
+        }
+
+        btn_submit.setOnClickListener{
+            Log.i(TAG, " Submit is clicked")
+        }
+
+
+
+
+    }
+    private fun clearinput(view: View){
+        view.findViewById<TextView>(R.id.F02_input_Date).setText("")
+        view.findViewById<Spinner>(R.id.F02_input_time).setSelection(0)
+        view.findViewById<Spinner>(R.id.F02_Input_dish).setSelection(0)
+
 
     }
 }
