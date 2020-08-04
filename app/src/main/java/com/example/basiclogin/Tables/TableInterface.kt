@@ -24,5 +24,6 @@ interface GenericTableInterface<E> {
     public fun outputRecords(records: List<E>)
 
     public fun fetchAllRecord():List<E>
+    public fun getRecordByID(id : Int):E
 
 }

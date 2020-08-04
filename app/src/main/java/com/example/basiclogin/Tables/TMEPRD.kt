@@ -3,6 +3,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.example.basiclogin.Models.DishItemRecord
 import com.example.basiclogin.Models.TimePeriodRecord
 
 class TMEPRD(val context:Context) : GenericTableInterface<TimePeriodRecord>{
@@ -33,13 +34,12 @@ class TMEPRD(val context:Context) : GenericTableInterface<TimePeriodRecord>{
         }
         queryoutput.close()
         dbread.close()
-        outputRecords(result)
         return result.size > 0
     }
 
     override fun generateRecordID():Int{
         try {
-            val QUERY_SCRIPT = "SELECT MAX(${TableConstants.TMEPRD_ID}) + 1 FROM ${TableConstants.TBL_TMEPRD} ;"
+            val QUERY_SCRIPT = "SELECT IFNULL(MAX(${TableConstants.TMEPRD_ID}) + 1,1) FROM ${TableConstants.TBL_TMEPRD} ;"
             val dbread = database.readableDatabase
             val result = dbread.rawQuery(QUERY_SCRIPT, null)
             var returnid: Int = -1
@@ -55,7 +55,7 @@ class TMEPRD(val context:Context) : GenericTableInterface<TimePeriodRecord>{
             return returnid
         }catch(e: Exception){
             Log.i(TAG, "generateUserID() -- > Exception found : ${e.message}")
-            return 0
+            return -1
         }
     }
 
@@ -163,6 +163,29 @@ class TMEPRD(val context:Context) : GenericTableInterface<TimePeriodRecord>{
 //        outputRecords(result)
         Log.i(TAG, "FetchAllRecord --> returned ${result.size}")
         return result
+    }
+
+    override fun getRecordByID(id : Int): TimePeriodRecord {
+        var result : MutableList<TimePeriodRecord> = ArrayList()
+        val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_TMEPRD} " +
+                "WHERE ${TableConstants.TMEPRD_ID} = $id"
+
+        val dbread = database.readableDatabase
+        val queryoutput  = dbread.rawQuery(QUERY_SCRIPT,null)
+        if (queryoutput.moveToFirst()){
+            do {
+                val current = TimePeriodRecord(
+                    queryoutput.getString(0).toInt(),
+                    queryoutput.getString(1),
+                    queryoutput.getString(2)
+                )
+                result.add(current)
+            }while(queryoutput.moveToNext())
+
+        }
+        queryoutput.close()
+        dbread.close()
+        return result[0]
     }
 
 

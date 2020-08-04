@@ -22,7 +22,7 @@ class CuisineCategoryRecordAdapter (context: Context, var resource:Int, var item
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         val layoutinflater : LayoutInflater = LayoutInflater.from(context)
-        val view : View = layoutinflater.inflate(R.layout.entry_f91_timeperiod,null)
+        val view : View = layoutinflater.inflate(resource,null)
 
         val entry_code = view.findViewById<TextView>(R.id.Entry_F91_V_code)
         val entry_Desc = view.findViewById<TextView>(R.id.Entry_F91_V_desc)

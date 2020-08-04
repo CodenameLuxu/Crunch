@@ -32,4 +32,13 @@ object TableConstants {
     @JvmStatic val DSHITM_MILKFREOPT: String = "DHIMILKFREOPT"
     @JvmStatic val DSHITM_SPICYOPT: String = "DHISPICOPT"
 
+    // Eat History
+    @JvmStatic val TBL_EATHIST: String = "EATHIST"
+    @JvmStatic val EATHIST_ID : String = "EHTENTID"
+    @JvmStatic val EATHIST_USERID : String = "EHTUSRID"
+    @JvmStatic val EATHIST_DISHID : String = "EHTDSHID"
+    @JvmStatic val EATHIST_TMEID : String = "EHTTPDID"
+    @JvmStatic val EATHIST_DATE : String = "EHTDATE"
+
+
 }

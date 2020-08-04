@@ -74,5 +74,16 @@
         <action
             android:id="@+id/action_f93_Fragment_to_f90_Fragment"
             app:destination="@id/f90_Fragment" />
+        <action
+            android:id="@+id/action_f93_Fragment_to_f931_Fragment"
+            app:destination="@id/f931_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/f931_Fragment"
+        android:name="com.example.basiclogin.Application.F931_Fragment"
+        android:label="F931_Fragment" >
+        <action
+            android:id="@+id/action_f931_Fragment_to_f93_Fragment"
+            app:destination="@id/f93_Fragment" />
     </fragment>
 </navigation>

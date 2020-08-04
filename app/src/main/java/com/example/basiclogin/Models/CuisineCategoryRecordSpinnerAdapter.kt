@@ -8,23 +8,30 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.basiclogin.R
 
-class CruisineCategoryRecordSpinnerAdapter(context: Context, var resource:Int, var items:List<CuisineCategoryRecord>)
+class CuisineCategoryRecordSpinnerAdapter(context: Context, var resource:Int, var items:List<CuisineCategoryRecord>)
     : ArrayAdapter<CuisineCategoryRecord>( context , resource , items ){
 
     val TAG = "CRUCAT spinner adapter"
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val current = items[position]
-
         val layoutinflater : LayoutInflater = LayoutInflater.from(context)
-        val view : View = layoutinflater.inflate(R.layout.entry_spinner_string,null)
+        val view : View = layoutinflater.inflate(resource,null)
 
         val entry_desc = view.findViewById<TextView>(R.id.entry_spinner_desc)
-        var record : CuisineCategoryRecord = items[position]
-
-        entry_desc.text = record.desc
-
+        entry_desc.setText(items[position].desc)
         return view
+    }
 
+    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+        return getView(position,convertView,parent!!)
+    }
+    override fun getCount(): Int {
+        return items.size
+    }
+
+    override fun getItem(position: Int): CuisineCategoryRecord {
+        return items[position]
     }
 }
+
+

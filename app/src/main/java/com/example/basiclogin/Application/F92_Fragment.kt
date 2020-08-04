@@ -42,6 +42,11 @@ class F92_Fragment : Fragment() {
                 }
                 addRecord()
 
+                resetField()
+                refreshList()
+                Toast.makeText(context,"Record added", Toast.LENGTH_LONG).show()
+
+
             }catch(e: Exception){
                 Toast.makeText(context,"${e.message}", Toast.LENGTH_LONG).show()
                 Log.i(TAG,"Exception found : ${e.message}")
@@ -50,18 +55,19 @@ class F92_Fragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.F91_Btn_Refresh).setOnClickListener {
-            resetField()
+            refreshList()
         }
 
         view.findViewById<Button>(R.id.F91_Btn_Back).setOnClickListener {
-            findNavController().navigate(R.id.action_f91_Fragment_to_f90_Fragment)
+            findNavController().navigate(R.id.action_f92_Fragment_to_f90_Fragment)
         }
+        refreshList()
 
     }
 
     fun addRecord(){
         val code =  F91_In_TMEPRD_Cd.text.toString()
-        val desc  = F91_In_TMEPRD_Desc.toString()
+        val desc  = F91_In_TMEPRD_Desc.text.toString()
 
         val record : CuisineCategoryRecord = CuisineCategoryRecord(0,code,desc)
         CRUCAT(context!!).addRecord(record)
@@ -78,7 +84,7 @@ class F92_Fragment : Fragment() {
     }
 
     fun refreshList(){
-        val records : List<CuisineCategoryRecord> = CRUCAT(context!!).fetchAllRecord()
+        val records : List<CuisineCategoryRecord> = CRUCAT(activity!!.applicationContext).fetchAllRecord()
         val listadapter = CuisineCategoryRecordAdapter(context!!,R.layout.entry_f91_timeperiod,records)
         F91_listview.adapter = listadapter
     }

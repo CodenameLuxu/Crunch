@@ -16,7 +16,7 @@
     <string name="L_Submit">"Submit"</string>
     <string name="L_Back">"Back"</string>
     <string name="L_Refresh">"Refresh"</string>
-    <string name="L_Crusine">"Crusine"</string>
+    <string name="L_Crusine">"Cuisine"</string>
 
     <string name="F01_Title">Crunch Food Picker</string>
     <string name="BTN_Log">Food Log</string>
@@ -27,6 +27,7 @@
     <string name="L_Time">Time</string>
     <string name="L_Dish">Dish</string>
     <string name="L_Name">Name</string>
+    <string name="L_Records">Records</string>
     <string name="L_DishItem">Dish Item</string>
     <string name="L_DishName">Dish Name</string>
     <string name="L_CruCat">Cuisine Category</string>
@@ -45,6 +46,8 @@
     <string name="L_SpicyOpt">Spicy</string>
     <string name="l_Delete">Delete</string>
     <string name="MSG_Delete">Confirm to delete?</string>
+
+    <string name="P_Date">01/01/2020</string>
 
 
 </resources>

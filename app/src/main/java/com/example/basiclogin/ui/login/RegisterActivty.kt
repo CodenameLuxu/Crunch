@@ -1,8 +1,10 @@
 package com.example.basiclogin.ui.login
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.StrictMode
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -10,7 +12,6 @@ import android.widget.Toast
 import com.example.basiclogin.R
 import com.example.basiclogin.Statics
 import com.example.basiclogin.Tables.USRADM
-import com.google.firebase.database.*
 import java.lang.Exception
 
 class RegisterActivty : AppCompatActivity() {
@@ -18,6 +19,10 @@ class RegisterActivty : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        if (Build.VERSION.SDK_INT > 9) {
+            val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+            StrictMode.setThreadPolicy(policy)
+        }
 
         findViewById<Button>(R.id.E02_Btn_Submit).setOnClickListener {
             if (isValidInput()){

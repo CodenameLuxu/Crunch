@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/F92_TBL_Title"
+        android:id="@+id/F93_TBL_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -18,117 +18,129 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/F92_L_CruCat"
+        android:id="@+id/F93_L_CruCat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"
         android:text="@string/L_CruCat"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/F92_TBL_Title"
-        app:layout_constraintTop_toBottomOf="@+id/F92_TBL_Title" />
+        app:layout_constraintStart_toStartOf="@+id/F93_TBL_Title"
+        app:layout_constraintTop_toBottomOf="@+id/F93_TBL_Title" />
 
     <TextView
-        android:id="@+id/F92_L_Name"
+        android:id="@+id/F93_L_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="@string/L_DishName"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/F92_In_CruCat"
-        app:layout_constraintTop_toBottomOf="@+id/F92_In_CruCat" />
+        app:layout_constraintStart_toStartOf="@+id/F93_In_CruCat"
+        app:layout_constraintTop_toBottomOf="@+id/F93_In_CruCat" />
 
     <Spinner
-        android:id="@+id/F92_In_CruCat"
+        android:id="@+id/F93_In_CruCat"
         android:layout_width="281dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@+id/F92_L_CruCat"
-        app:layout_constraintTop_toBottomOf="@+id/F92_L_CruCat" />
+        app:layout_constraintStart_toStartOf="@+id/F93_L_CruCat"
+        app:layout_constraintTop_toBottomOf="@+id/F93_L_CruCat" />
 
 
     <EditText
-        android:id="@+id/F92_In_DishName"
+        android:id="@+id/F93_In_DishName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/L_Name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/F92_L_Name"
-        app:layout_constraintTop_toBottomOf="@+id/F92_L_Name" />
+        app:layout_constraintStart_toStartOf="@+id/F93_L_Name"
+        app:layout_constraintTop_toBottomOf="@+id/F93_L_Name" />
 
     <TextView
-        android:id="@+id/F92_L_Option"
+        android:id="@+id/F93_L_Option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/L_Option"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/F92_In_DishName"
-        app:layout_constraintTop_toBottomOf="@+id/F92_In_DishName" />
+        app:layout_constraintStart_toStartOf="@+id/F93_In_DishName"
+        app:layout_constraintTop_toBottomOf="@+id/F93_In_DishName" />
 
     <CheckBox
-        android:id="@+id/F92_In_Vegan"
+        android:id="@+id/F93_In_Vegan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/L_VeganOpt"
-        app:layout_constraintStart_toStartOf="@+id/F92_L_Option"
-        app:layout_constraintTop_toBottomOf="@+id/F92_L_Option" />
+        app:layout_constraintStart_toStartOf="@+id/F93_L_Option"
+        app:layout_constraintTop_toBottomOf="@+id/F93_L_Option" />
 
     <CheckBox
-        android:id="@+id/F92_In_NutFree"
+        android:id="@+id/F93_In_NutFree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/L_NutFreOpt"
-        app:layout_constraintStart_toStartOf="@+id/F92_In_Vegan"
-        app:layout_constraintTop_toBottomOf="@+id/F92_In_Vegan" />
+        app:layout_constraintStart_toStartOf="@+id/F93_In_Vegan"
+        app:layout_constraintTop_toBottomOf="@+id/F93_In_Vegan" />
 
     <CheckBox
-        android:id="@+id/F92_In_MilkFree"
+        android:id="@+id/F93_In_MilkFree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:text="@string/L_MilkFreOpt"
-        app:layout_constraintStart_toEndOf="@+id/F92_In_Vegan"
-        app:layout_constraintTop_toTopOf="@+id/F92_In_Vegan" />
+        app:layout_constraintStart_toEndOf="@+id/F93_In_Vegan"
+        app:layout_constraintTop_toTopOf="@+id/F93_In_Vegan" />
 
     <CheckBox
-        android:id="@+id/F92_In_Spicy"
+        android:id="@+id/F93_In_Spicy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/L_SpicyOpt"
-        app:layout_constraintStart_toStartOf="@+id/F92_In_MilkFree"
-        app:layout_constraintTop_toTopOf="@+id/F92_In_NutFree" />
+        app:layout_constraintStart_toStartOf="@+id/F93_In_MilkFree"
+        app:layout_constraintTop_toTopOf="@+id/F93_In_NutFree" />
 
     <Button
-        android:id="@+id/F92_Btn_Submit"
+        android:id="@+id/F93_Btn_Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="56dp"
         android:text="@string/L_Add"
-        app:layout_constraintStart_toEndOf="@+id/F92_Btn_Clear"
-        app:layout_constraintTop_toTopOf="@+id/F92_Btn_Clear" />
+        app:layout_constraintStart_toEndOf="@+id/F93_Btn_Clear"
+        app:layout_constraintTop_toTopOf="@+id/F93_Btn_Clear" />
 
     <Button
-        android:id="@+id/F92_Btn_Back"
+        android:id="@+id/F93_Btn_Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="12dp"
         android:text="@string/L_Back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/F92_In_NutFree" />
+        app:layout_constraintEnd_toEndOf="@+id/F93_Btn_Clear"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/F93_Btn_Clear"
+        app:layout_constraintTop_toBottomOf="@+id/F93_Btn_Clear" />
 
     <Button
-        android:id="@+id/F92_Btn_Clear"
+        android:id="@+id/F93_Btn_Clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
         android:text="@string/L_Clear"
-        app:layout_constraintStart_toEndOf="@+id/F92_Btn_Back"
-        app:layout_constraintTop_toTopOf="@+id/F92_Btn_Back" />
+        app:layout_constraintStart_toStartOf="@+id/F93_In_NutFree"
+        app:layout_constraintTop_toBottomOf="@+id/F93_In_NutFree" />
+
+    <Button
+        android:id="@+id/F93_Btn_Records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/L_Records"
+        app:layout_constraintBottom_toBottomOf="@+id/F93_Btn_Back"
+        app:layout_constraintEnd_toEndOf="@+id/F93_Btn_Submit"
+        app:layout_constraintStart_toStartOf="@+id/F93_Btn_Submit"
+        app:layout_constraintTop_toTopOf="@+id/F93_Btn_Back"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

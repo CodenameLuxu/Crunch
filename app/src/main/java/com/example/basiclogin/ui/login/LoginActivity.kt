@@ -1,18 +1,21 @@
 package com.example.basiclogin.ui.login
 
+//import com.example.basiclogin.Application.MainActivity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
+import android.os.StrictMode
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.basiclogin.Application.MainActivity
 import com.example.basiclogin.R
 import com.example.basiclogin.Statics
-//import com.example.basiclogin.Application.MainActivity
-import com.example.basiclogin.Application.MainActivity
 import com.example.basiclogin.Tables.USRADM
-import com.google.firebase.database.*
 
 
 class LoginActivity : AppCompatActivity() {
@@ -22,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        if (Build.VERSION.SDK_INT > 9) {
+            val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+            StrictMode.setThreadPolicy(policy)
+        }
 
         findViewById<Button>(R.id.E01_Btn_login).setOnClickListener{
              if (processCredential()){
@@ -66,12 +73,20 @@ class LoginActivity : AppCompatActivity() {
     private fun toRegisterPage(){
         val intent = Intent(this, RegisterActivty::class.java)
         startActivity(intent)
-        finish()
     }
 
     private fun toMainPage(username:String){
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra(Statics.USRADM_USRUSRNM,username)
+        val userobj : UserCredential = USRADM(this).getUserByUsername(username)
+        val intent = Intent(this@LoginActivity,MainActivity::class.java)
+        intent.putExtra(Statics.KEY_USERID, userobj.usrid.toString())
+//        Log.i(TAG,"${userobj.usrusrnm} : ${userobj.usrid}  passed")
+//
+//
+//        val editor : SharedPreferences.Editor = getSharedPreferences(Statics.KEY_USEROBJ, Context.MODE_PRIVATE).edit()
+//        editor.putString(S);
+//        editor.commit();
+//        intent
+
         startActivity(intent)
     }
 

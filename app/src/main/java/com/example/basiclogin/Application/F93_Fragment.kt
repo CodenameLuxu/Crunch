@@ -12,10 +12,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.basiclogin.Models.CuisineCategoryRecord
 import com.example.basiclogin.Models.CuisineCategoryRecordAdapter
+import com.example.basiclogin.Models.CuisineCategoryRecordSpinnerAdapter
 import com.example.basiclogin.Models.DishItemRecord
 import com.example.basiclogin.R
+import com.example.basiclogin.Tables.CRUCAT
 import com.example.basiclogin.Tables.DSHITM
 import com.example.basiclogin.Tables.TableConstants
+import kotlinx.android.synthetic.main.fragment_f91__tbl_codedesc.*
 import kotlinx.android.synthetic.main.fragment_f93_dshitm.*
 
 class F93_Fragment : Fragment() {
@@ -27,15 +30,16 @@ class F93_Fragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_f93_dshitm, container, false)
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<TextView>(R.id.F92_TBL_Title).setText(TableConstants.TBL_DSHITM)
+        view.findViewById<TextView>(R.id.F93_TBL_Title).setText(TableConstants.TBL_DSHITM)
 
-        view.findViewById<Button>(R.id.F92_Btn_Submit).setOnClickListener {
+        view.findViewById<Button>(R.id.F93_Btn_Submit).setOnClickListener {
             try {
                 if (!requireFieldCheck()){
                     throw Exception("Required field is blank")
@@ -51,23 +55,30 @@ class F93_Fragment : Fragment() {
 
         }
 
-        view.findViewById<Button>(R.id.F92_Btn_Clear).setOnClickListener {
+        view.findViewById<Button>(R.id.F93_Btn_Clear).setOnClickListener {
             resetField()
         }
 
-        view.findViewById<Button>(R.id.F92_Btn_Back).setOnClickListener {
-            findNavController().navigate(R.id.action_f92_Fragment_to_f90_Fragment)
+        view.findViewById<Button>(R.id.F93_Btn_Records).setOnClickListener {
+            findNavController().navigate(R.id.action_f93_Fragment_to_f931_Fragment)
         }
+
+
+        view.findViewById<Button>(R.id.F93_Btn_Back).setOnClickListener {
+            findNavController().navigate(R.id.action_f93_Fragment_to_f90_Fragment)
+        }
+
+        refreshcuisine()
 
     }
 
     fun addRecord(){
-        val crusine: CuisineCategoryRecord = F92_In_CruCat.selectedItem as CuisineCategoryRecord
-        val dishname = F92_In_DishName.text.toString()
-        val veganOpt = F92_In_Vegan.isChecked
-        val nutfreeopt = F92_In_NutFree.isChecked
-        val milkfreeopt = F92_In_MilkFree.isChecked
-        val spicyopt = F92_In_Spicy.isChecked
+        val crusine: CuisineCategoryRecord = F93_In_CruCat.selectedItem as CuisineCategoryRecord
+        val dishname = F93_In_DishName.text.toString()
+        val veganOpt = F93_In_Vegan.isChecked
+        val nutfreeopt = F93_In_NutFree.isChecked
+        val milkfreeopt = F93_In_MilkFree.isChecked
+        val spicyopt = F93_In_Spicy.isChecked
 
         val record : DishItemRecord = DishItemRecord(0,"",dishname,crusine.id,veganOpt,nutfreeopt,milkfreeopt,spicyopt)
         DSHITM(context!!).addRecord(record)
@@ -75,16 +86,22 @@ class F93_Fragment : Fragment() {
     }
 
     fun requireFieldCheck():Boolean{
-        return F92_In_DishName.text.isBlank()
+        return !F93_In_DishName.text.isBlank()
+//        true  = input are valid
     }
 
     fun resetField(){
-        F92_In_CruCat.setSelection(0)
-        F92_In_DishName.setText("")
-        F92_In_Vegan.isChecked = false
-        F92_In_NutFree.isChecked = false
-        F92_In_MilkFree.isChecked = false
-        F92_In_Spicy.isChecked = false
+        F93_In_CruCat.setSelection(0)
+        F93_In_DishName.setText("")
+        F93_In_Vegan.isChecked = false
+        F93_In_NutFree.isChecked = false
+        F93_In_MilkFree.isChecked = false
+        F93_In_Spicy.isChecked = false
+    }
 
+    fun refreshcuisine(){
+        val records : List<CuisineCategoryRecord> = CRUCAT(activity!!.applicationContext).fetchAllRecord()
+        val spinnerAdapter = CuisineCategoryRecordSpinnerAdapter(context!!,R.layout.entry_spinner_string,records)
+        F93_In_CruCat.adapter = spinnerAdapter
     }
 }

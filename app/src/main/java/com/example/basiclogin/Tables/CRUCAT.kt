@@ -125,4 +125,27 @@ class CRUCAT(val context: Context) :GenericTableInterface<CuisineCategoryRecord>
         return result
     }
 
+    override fun getRecordByID(id : Int):CuisineCategoryRecord {
+        var result : MutableList<CuisineCategoryRecord> = ArrayList()
+        val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_CRUCAT} " +
+                "WHERE ${TableConstants.CRUCAT_ID} = $id"
+
+        val dbread = database.readableDatabase
+        val queryoutput  = dbread.rawQuery(QUERY_SCRIPT,null)
+        if (queryoutput.moveToFirst()){
+            do {
+                val current = CuisineCategoryRecord(
+                    queryoutput.getString(0).toInt(),
+                    queryoutput.getString(1),
+                    queryoutput.getString(2)
+                )
+                result.add(current)
+            }while(queryoutput.moveToNext())
+
+        }
+        queryoutput.close()
+        dbread.close()
+        return result[0]
+    }
+
 }

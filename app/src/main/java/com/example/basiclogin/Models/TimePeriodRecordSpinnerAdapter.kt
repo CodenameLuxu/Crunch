@@ -27,4 +27,14 @@ class TimePeriodRecorSpinnerdAdapter(context: Context, var resource:Int, var ite
         return view
 
     }
+    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?): View? {
+        return getView(position,convertView,parent!!)
+    }
+    override fun getCount(): Int {
+        return items.size
+    }
+
+    override fun getItem(position: Int): TimePeriodRecord {
+        return items[position]
+    }
 }

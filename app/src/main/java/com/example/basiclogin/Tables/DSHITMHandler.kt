@@ -10,6 +10,7 @@ class DSHITMHandler (context: Context): SQLiteOpenHelper(context, TableConstants
     override fun onCreate(db: SQLiteDatabase?) {
         val SCRIPT_CREATE = "CREATE TABLE ${TableConstants.TBL_DSHITM} ( " +
                 "${TableConstants.DSHITM_ID} INTEGER  PRIMARY KEY ," +
+                "${TableConstants.DSHITM_DHICRUCAT} INTEGER," +
                 "${TableConstants.DSHITM_DHIITMCD} TEXT," +
                 "${TableConstants.DSHITM_DHIITMNM} TEXT," +
                 "${TableConstants.DSHITM_VEGANOPT} INTEGER," +

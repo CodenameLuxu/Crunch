@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/DIA_UP_DSHITM_L_Cuisine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/L_Crusine"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/DIA_UP_DSHITM_V_Cuisine"
+        android:layout_width="207dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/DIA_UP_DSHITM_L_Cuisine"
+        app:layout_constraintStart_toEndOf="@+id/DIA_UP_DSHITM_L_Cuisine"
+        app:layout_constraintTop_toTopOf="@+id/DIA_UP_DSHITM_L_Cuisine" />
+
+    <TextView
+        android:id="@+id/DIA_UP_DSHITM_L_Dish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/L_DishName"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/DIA_UP_DSHITM_L_Cuisine"
+        app:layout_constraintTop_toBottomOf="@+id/DIA_UP_DSHITM_L_Cuisine" />
+
+    <EditText
+        android:id="@+id/DIA_UP_DSHITM_V_Dish"
+        android:layout_width="207dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="@+id/DIA_UP_DSHITM_L_Dish"
+        app:layout_constraintEnd_toEndOf="@+id/DIA_UP_DSHITM_V_Cuisine"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/DIA_UP_DSHITM_V_Cuisine"
+        app:layout_constraintTop_toTopOf="@+id/DIA_UP_DSHITM_L_Dish" />
+
+    <CheckBox
+        android:id="@+id/DIA_UP_DSHITM_V_VeganOpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/L_VeganOpt"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/DIA_UP_DSHITM_V_Dish"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="@+id/DIA_UP_DSHITM_L_Dish"
+        app:layout_constraintTop_toBottomOf="@+id/DIA_UP_DSHITM_V_Dish" />
+
+    <CheckBox
+        android:id="@+id/DIA_UP_DSHITM_V_NutFreeOpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:textSize="15sp"
+        android:text="@string/L_NutFreOpt"
+        app:layout_constraintStart_toEndOf="@+id/DIA_UP_DSHITM_V_VeganOpt"
+        app:layout_constraintTop_toTopOf="@+id/DIA_UP_DSHITM_V_VeganOpt" />
+
+    <CheckBox
+        android:id="@+id/DIA_UP_DSHITM_V_MilkFreOpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="@string/L_MilkFreOpt"
+        app:layout_constraintStart_toStartOf="@+id/DIA_UP_DSHITM_V_NutFreeOpt"
+        app:layout_constraintTop_toTopOf="@+id/DIA_UP_DSHITM_V_SpicyOpt" />
+
+    <CheckBox
+        android:id="@+id/DIA_UP_DSHITM_V_SpicyOpt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="15sp"
+        android:text="@string/L_SpicyOpt"
+        app:layout_constraintStart_toStartOf="@+id/DIA_UP_DSHITM_V_VeganOpt"
+        app:layout_constraintTop_toBottomOf="@+id/DIA_UP_DSHITM_V_VeganOpt" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

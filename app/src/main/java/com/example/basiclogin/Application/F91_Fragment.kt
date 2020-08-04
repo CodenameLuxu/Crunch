@@ -44,15 +44,15 @@ class F91_Fragment : Fragment() {
                     Toast.makeText(activity, "All fields must not be empty", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    Log.i(TAG, "Attempting to add record")
+//                    Log.i(TAG, "Attempting to add record")
                     val toAdd = TimePeriodRecord(
                         0,
                         F91_In_TMEPRD_Cd.text.toString(),
                         F91_In_TMEPRD_Desc.text.toString()
                     )
-                    TMEPRD(context!!).addRecord(toAdd)
+                    TMEPRD(activity!!.applicationContext).addRecord(toAdd)
                 }
-                Log.i(TAG, "Adding operation finished.")
+//                Log.i(TAG, "Adding operation finished.")
                 Toast.makeText(context,"Record added",Toast.LENGTH_LONG).show()
                 resetField()
                 refreshResultView()
@@ -81,7 +81,7 @@ class F91_Fragment : Fragment() {
         val adapter = TimePeriodRecordAdapter(context!!,R.layout.entry_f91_timeperiod,records)
         F91_listview.adapter  =  adapter
 
-        Log.i(TAG, "F91 : Count in record : ${records.size}")
+//        Log.i(TAG, "F91 : Count in record : ${records.size}")
         Log.i(TAG, "F91 : Count in view : ${F91_listview.count}")
     }
 

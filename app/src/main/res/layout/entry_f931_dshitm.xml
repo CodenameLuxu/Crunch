@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/ent_F931_L_Cuisine"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/L_Crusine"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ent_F931_L_Dish"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/L_DishName"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ent_F931_L_Cuisine"
+        app:layout_constraintTop_toBottomOf="@+id/ent_F931_L_Cuisine" />
+
+    <TextView
+        android:id="@+id/ent_F931_V_Cuisine"
+        android:layout_width="139dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ent_F931_L_Cuisine"
+        app:layout_constraintStart_toEndOf="@+id/ent_F931_L_Cuisine"
+        app:layout_constraintTop_toTopOf="@+id/ent_F931_L_Cuisine" />
+
+    <TextView
+        android:id="@+id/ent_F931_V_Dish"
+        android:layout_width="139dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/ent_F931_V_Cuisine"
+        app:layout_constraintTop_toTopOf="@+id/ent_F931_L_Dish" />
+
+    <Button
+        android:id="@+id/ent_F931_Btn_Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:text="@string/L_Update"
+
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/ent_F931_V_Cuisine"
+        app:layout_constraintTop_toTopOf="@+id/ent_F931_L_Cuisine" />
+
+    <Button
+        android:id="@+id/ent_F931_Btn_Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/l_Delete"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/ent_F931_Btn_Update"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ent_F931_Btn_Update"
+        app:layout_constraintTop_toBottomOf="@+id/ent_F931_Btn_Update" />
 </androidx.constraintlayout.widget.ConstraintLayout>
