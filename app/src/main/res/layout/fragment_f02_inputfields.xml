@@ -8,12 +8,13 @@
 
     <Spinner
         android:id="@+id/F02_input_time"
-        android:layout_width="238dp"
-        android:layout_height="65dp"
+        android:layout_width="313dp"
+        android:layout_height="62dp"
         android:layout_below="@+id/F02_label_Time"
         android:layout_alignStart="@+id/F02_label_Time"
         android:layout_marginStart="-1dp"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="18dp"
+        android:textSize="24sp"/>
 
     <TextView
         android:id="@+id/F02_Label_Date"
@@ -47,7 +48,8 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="8dp"
         android:text="@string/P_Date"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:background="#FFFFFF"/>
 
     <TextView
         android:id="@+id/F02_label_Time"
@@ -64,20 +66,42 @@
         android:id="@+id/F02_Label_Dish"
         android:layout_width="120dp"
         android:layout_height="51dp"
-        android:layout_below="@+id/F02_input_time"
+        android:layout_below="@+id/F02_Input_Crucat"
         android:layout_alignStart="@+id/F02_input_time"
-        android:layout_marginStart="-2dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="21dp"
         android:text="@string/L_Dish"
         android:textSize="30sp" />
 
     <Spinner
         android:id="@+id/F02_Input_dish"
         android:layout_width="298dp"
-        android:layout_height="76dp"
+        android:layout_height="58dp"
         android:layout_below="@+id/F02_Label_Dish"
         android:layout_alignStart="@+id/F02_input_time"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/F02_Label_CruCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/F02_input_time"
+        android:layout_alignStart="@+id/F02_input_time"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="26dp"
+        android:text="Category"
+        android:textSize="30sp" />
+
+    <Spinner
+        android:id="@+id/F02_Input_Crucat"
+        android:layout_width="298dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/F02_Label_CruCat"
+        android:layout_alignStart="@+id/F02_Label_CruCat"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="17dp" />
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"/>
 
 </RelativeLayout>

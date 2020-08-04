@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import 	android.util.Log
 import android.app.DatePickerDialog
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import android.widget.*
 import androidx.annotation.RequiresApi
@@ -15,13 +16,11 @@ import com.example.basiclogin.Models.*
 import java.util.Calendar
 import com.example.basiclogin.R
 import com.example.basiclogin.Statics
-import com.example.basiclogin.Tables.DSHITM
-import com.example.basiclogin.Tables.EATHIST
-import com.example.basiclogin.Tables.FormatConstants
-import com.example.basiclogin.Tables.TMEPRD
+import com.example.basiclogin.Tables.*
 import kotlinx.android.synthetic.main.fragment_f02_inputfields.*
 import kotlinx.android.synthetic.main.fragment_f02_log.*
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 /**
@@ -54,12 +53,14 @@ class F02_Fragment : Fragment() {
 
 //       Prep input fields functionality
         var inputview =  layoutInflater.inflate(R.layout.fragment_f02_inputfields,null)
+        inputview.setBackgroundColor(Color.parseColor("#e0e0e0"))
         initInputFields(inputview)
         initButtonFunctions(view)
 
         inputfield.addView(inputview)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun initInputFields(view : View) {
 //       Date Picker
         var datepicker = view.findViewById<Button>(R.id.F02_Btn_Calendar)
@@ -86,12 +87,23 @@ class F02_Fragment : Fragment() {
         val timespinneradapter = TimePeriodRecorSpinnerdAdapter(context!!,R.layout.entry_spinner_string,timeprdrecords)
         timePeriodspinner.adapter = timespinneradapter
 
-        // Dish
-        var dishspinner = view.findViewById<Spinner>(R.id.F02_Input_dish)
-        val dishrecord = DSHITM(context!!).fetchAllRecord()
-        val dishadapter = DishItemRecordSpinnerAdapter(context!!,R.layout.entry_spinner_string,dishrecord)
-        dishspinner.adapter = dishadapter
+        // Category
+        var catspinner = view.findViewById<Spinner>(R.id.F02_Input_Crucat)
+        val category = CRUCAT(context!!).fetchAllRecord()
+        val categoryadapter = CuisineCategoryRecordSpinnerAdapter(context!!,R.layout.entry_spinner_string,category)
+        catspinner.adapter = categoryadapter
+        catspinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>,innerview: View,position: Int,id: Long ) {
+                refreshDishSpinner(view)
+            }
 
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
+
+        // Dish
+        refreshDishSpinner(view)
+        clearinput(view)
 
     }
 
@@ -156,12 +168,28 @@ class F02_Fragment : Fragment() {
 
     }
 
+    public fun refreshDishSpinner(view: View){
 
+        val selectedCat = view.findViewById<Spinner>(R.id.F02_Input_Crucat).selectedItem as CuisineCategoryRecord
+        var dishspinner = view.findViewById<Spinner>(R.id.F02_Input_dish)
+        val dishrecord = DSHITM(context!!).getRecordWithCategory(selectedCat.id)
+        val dishadapter = DishItemRecordSpinnerAdapter(context!!,R.layout.entry_spinner_string,dishrecord)
+        dishspinner.adapter = dishadapter
+
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun clearinput(view: View){
-        view.findViewById<TextView>(R.id.F02_input_Date).setText("")
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern(FormatConstants.F_Date_Display)
+        val formatted = current.format(formatter)
+
+        view.findViewById<TextView>(R.id.F02_input_Date).setText(formatted)
         view.findViewById<Spinner>(R.id.F02_input_time).setSelection(0)
-        view.findViewById<Spinner>(R.id.F02_Input_dish).setSelection(0)
+        view.findViewById<Spinner>(R.id.F02_Input_Crucat).setSelection(0)
     }
 
 
 }
+
