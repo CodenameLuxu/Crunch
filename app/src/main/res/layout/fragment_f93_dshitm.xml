@@ -10,8 +10,8 @@
         android:id="@+id/F93_TBL_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="80dp"
         android:text="@string/L_Description"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,18 +43,20 @@
         android:layout_width="281dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/F93_L_CruCat"
         app:layout_constraintTop_toBottomOf="@+id/F93_L_CruCat" />
 
 
     <EditText
         android:id="@+id/F93_In_DishName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="282dp"
+        android:layout_height="46dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/L_Name"
         android:inputType="textPersonName"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/F93_L_Name"
         app:layout_constraintTop_toBottomOf="@+id/F93_L_Name" />
 
@@ -62,7 +64,8 @@
         android:id="@+id/F93_L_Option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:text="@string/L_Option"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/F93_In_DishName"
@@ -74,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/L_VeganOpt"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/F93_L_Option"
         app:layout_constraintTop_toBottomOf="@+id/F93_L_Option" />
 
@@ -83,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/L_NutFreOpt"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/F93_In_Vegan"
         app:layout_constraintTop_toBottomOf="@+id/F93_In_Vegan" />
 
@@ -92,6 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:text="@string/L_MilkFreOpt"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/F93_In_Vegan"
         app:layout_constraintTop_toTopOf="@+id/F93_In_Vegan" />
 
@@ -100,6 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/L_SpicyOpt"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/F93_In_MilkFree"
         app:layout_constraintTop_toTopOf="@+id/F93_In_NutFree" />
 

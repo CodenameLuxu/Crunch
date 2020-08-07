@@ -1,6 +1,7 @@
 package com.example.basiclogin.Application
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.basiclogin.R
 import com.example.basiclogin.Statics
 import com.example.basiclogin.Tables.USRADM
+import com.example.basiclogin.ui.login.LoginActivity
+import com.example.basiclogin.ui.login.UserCredential
 
 
 /**
@@ -46,10 +49,16 @@ class F01_Fragment : Fragment() {
         view.findViewById<Button>(R.id.F01_Btn_Option).setOnClickListener {
             findNavController().navigate(R.id.action_f01_Fragment_to_f90_Fragment)
         }
+
+        view.findViewById<Button>(R.id.F01_Btn_Logout).setOnClickListener {
+            logout()
+        }
+
+
         Log.i(TAG ,"User passed : ${userid}")
         try {
             val userobj = USRADM(context!!).getUserByID(userid!!)
-            Toast.makeText(context, "Greetings, ${userobj.usrusrnm}", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Greetings, ${userobj.usrusrnm}", Toast.LENGTH_SHORT).show()
         }catch (e: Exception){
             Log.i(TAG,"Exception found : ${e.message}")
             Toast.makeText(context, "No user found", Toast.LENGTH_LONG).show()
@@ -57,6 +66,11 @@ class F01_Fragment : Fragment() {
 
 
 
+    }
+
+    private fun logout(){
+        val intent = Intent(this.context,LoginActivity::class.java)
+        startActivity(intent)
     }
 
 }

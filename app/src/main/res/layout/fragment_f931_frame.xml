@@ -8,8 +8,8 @@
 
     <ListView
         android:id="@+id/F931_ScrollPane"
-        android:layout_width="383dp"
-        android:layout_height="404dp"
+        android:layout_width="375dp"
+        android:layout_height="502dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"

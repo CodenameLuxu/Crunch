@@ -49,4 +49,14 @@
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/F01_BTN_Log"
         app:layout_constraintTop_toBottomOf="@+id/F01_BTN_Log" />
+
+    <Button
+        android:id="@+id/F01_Btn_Logout"
+        android:layout_width="86dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/L_Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

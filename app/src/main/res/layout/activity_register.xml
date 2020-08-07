@@ -10,13 +10,13 @@
         android:id="@+id/E02_L_Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="32dp"
         android:text="@string/L_Username"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/E02_Title"
+        app:layout_constraintTop_toBottomOf="@+id/E02_Title" />
 
     <TextView
         android:id="@+id/E02_L_Password"
@@ -35,10 +35,10 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/L_Username"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/E02_L_Username"
-        app:layout_constraintTop_toBottomOf="@+id/E02_L_Username"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/E02_L_Username" />
 
     <Button
         android:id="@+id/E02_Btn_Submit"
@@ -72,4 +72,16 @@
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@+id/E02_L_Password"
         app:layout_constraintTop_toBottomOf="@+id/E02_L_Password" />
+
+    <TextView
+        android:id="@+id/E02_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:text="@string/L_Registration"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

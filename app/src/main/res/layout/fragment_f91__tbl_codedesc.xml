@@ -10,8 +10,8 @@
 
         <ListView
             android:id="@+id/F91_listview"
-            android:layout_width="349dp"
-            android:layout_height="181dp"
+            android:layout_width="364dp"
+            android:layout_height="248dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"

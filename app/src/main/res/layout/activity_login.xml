@@ -16,32 +16,32 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/L_Username"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/E01_Title" />
 
     <EditText
         android:id="@+id/E01_In_Password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/L_Password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/E01_In_Username"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/E01_In_Username" />
 
     <Button
         android:id="@+id/E01_Btn_login"
@@ -55,10 +55,10 @@
         android:text="@string/L_Signin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/E01_In_Password"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -85,6 +85,17 @@
         app:layout_constraintEnd_toEndOf="@+id/E01_Btn_login"
         app:layout_constraintStart_toStartOf="@+id/E01_Btn_login"
         app:layout_constraintTop_toBottomOf="@+id/E01_Btn_login" />
+
+    <TextView
+        android:id="@+id/E01_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:text="@string/app_name"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
