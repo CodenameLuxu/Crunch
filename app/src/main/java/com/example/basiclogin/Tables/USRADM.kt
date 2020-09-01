@@ -63,8 +63,8 @@ class USRADM(val context:Context) {
 
     public fun isCredentialExist(user:String,password:String): Boolean{
         var userlist : MutableList<UserCredential> = ArrayList()
-        val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_USRADM}"
-        "WHERE ${TableConstants.USRADM_USRUSRNM}  = \"$user\" "
+        val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_USRADM}" +
+        " WHERE ${TableConstants.USRADM_USRUSRNM}  = \"${user}\" "+
         " AND ${TableConstants.USRADM_usrpass} = \"${password}\" "
         val dbread = database.readableDatabase
         val result  = dbread.rawQuery(QUERY_SCRIPT,null)
