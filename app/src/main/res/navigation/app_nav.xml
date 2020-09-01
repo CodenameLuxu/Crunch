@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_f90_Fragment_to_f93_Fragment"
             app:destination="@id/f93_Fragment" />
+        <action
+            android:id="@+id/action_f90_Fragment_to_f94_Fragment"
+            app:destination="@id/f94_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/f91_Fragment"
@@ -85,5 +88,13 @@
         <action
             android:id="@+id/action_f931_Fragment_to_f93_Fragment"
             app:destination="@id/f93_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/f94_Fragment"
+        android:name="com.example.basiclogin.Application.F94_Fragment"
+        android:label="F94_Fragment" >
+        <action
+            android:id="@+id/action_f94_Fragment_to_f90_Fragment"
+            app:destination="@id/f90_Fragment" />
     </fragment>
 </navigation>

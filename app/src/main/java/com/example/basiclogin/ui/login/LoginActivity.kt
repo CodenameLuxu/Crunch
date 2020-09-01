@@ -34,6 +34,8 @@ class LoginActivity : AppCompatActivity() {
              if (processCredential()){
                  toMainPage(findViewById<EditText>(R.id.E01_In_Username).text.toString())
                  reset()
+             }else{
+                 Toast.makeText(this,"User not found",Toast.LENGTH_LONG)
              }
         }
 
@@ -55,7 +57,6 @@ class LoginActivity : AppCompatActivity() {
                 return true
             }else{
                 Log.i(TAG,"user not found")
-                Toast.makeText(this,"User not found",Toast.LENGTH_LONG)
                 return false
             }
         }catch (e: Exception){

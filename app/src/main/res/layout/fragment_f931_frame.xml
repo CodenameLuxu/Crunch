@@ -8,8 +8,8 @@
 
     <ListView
         android:id="@+id/F931_ScrollPane"
-        android:layout_width="375dp"
-        android:layout_height="502dp"
+        android:layout_width="367dp"
+        android:layout_height="589dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
@@ -20,7 +20,7 @@
         android:id="@+id/F931_Btn_Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="92dp"
         android:layout_marginTop="20dp"
         android:text="@string/L_Back"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,11 +30,10 @@
         android:id="@+id/F931_Btn_Refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="64dp"
         android:text="@string/L_Refresh"
         app:layout_constraintStart_toEndOf="@+id/F931_Btn_Back"
         app:layout_constraintTop_toTopOf="@+id/F931_Btn_Back" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,7 +67,7 @@ class EATHIST(val context: Context) :GenericTableInterface<EatHistoryRecord>{
     override fun deleteRecord(entry: EatHistoryRecord): Boolean{
         val result =  database.writableDatabase.delete(
             TableConstants.TBL_EATHIST,
-            TableConstants.EATHIST_USERID + "=" + entry.id,
+            "${TableConstants.EATHIST_ID} = ${entry.id} AND ${TableConstants.EATHIST_USERID} = ${entry.userid}",
             null
         )
         return result > 0
@@ -76,6 +76,32 @@ class EATHIST(val context: Context) :GenericTableInterface<EatHistoryRecord>{
     override fun fetchAllRecord():List<EatHistoryRecord>{
         var result : MutableList<EatHistoryRecord> = ArrayList()
         val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_EATHIST}"
+
+        val dbread = database.readableDatabase
+        val queryoutput  = dbread.rawQuery(QUERY_SCRIPT,null)
+        if (queryoutput.moveToFirst()){
+            do {
+                val current = EatHistoryRecord(
+                    queryoutput.getString(0).toInt(),
+                    queryoutput.getString(1).toInt(),
+                    queryoutput.getString(2).toInt(),
+                    queryoutput.getString(3).toInt(),
+                    queryoutput.getString(4)
+                )
+                result.add(current)
+            }while(queryoutput.moveToNext())
+
+        }
+        queryoutput.close()
+        dbread.close()
+        return result
+    }
+
+
+     fun fetchAllRecordByUser(userid: Int):List<EatHistoryRecord>{
+        var result : MutableList<EatHistoryRecord> = ArrayList()
+        val QUERY_SCRIPT  = "SELECT * FROM ${TableConstants.TBL_EATHIST} "+
+                " WHERE ${TableConstants.EATHIST_USERID} = ${userid}"
 
         val dbread = database.readableDatabase
         val queryoutput  = dbread.rawQuery(QUERY_SCRIPT,null)
